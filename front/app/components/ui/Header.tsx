@@ -1,5 +1,4 @@
 import Image from "next/image";
-import teste from 'teste';
 
 export const Header = () => {
   return (
