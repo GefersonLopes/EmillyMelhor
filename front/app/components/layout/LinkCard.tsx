@@ -1,28 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-interface LinkCardProps {
-  href: string;
-  title: string;
-  imageSrc: string;
-}
+import { LinkCardProps } from "@/app/page/interfaces/types";
 
-export function LinkCard({ href, title, imageSrc }: LinkCardProps) {
+export function LinkCard({ href, title, icon }: LinkCardProps) {
+  const router = useRouter();
+
   return (
-    <Link
-      href={href}
-      className="flex items-center bg-gray-800 hover:bg-gray-700 transition p-4 rounded-lg"
+    <button
+      onClick={() => router.push(href)}
+      className="h-28 w-full flex items-center bg-[#1b1b1b] hover:bg-[#1b1b1b] transition rounded-lg"
     >
-      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden">
-        <Image
-          src={imageSrc}
-          alt={title}
-          width={56}
-          height={56}
-          className="object-cover"
-        />
+      <div className="w -full h-full flex items-center gap-2">
+        <div className="w-24 h-full rounded-lg overflow-hidden p-0.5 bg-white flex items-center justify-center">
+          {icon}
+        </div>
+        <span className="ml-4 text-xl font-medium">{title}</span>
       </div>
-      <span className="ml-4 text-base sm:text-lg font-medium">{title}</span>
-    </Link>
+    </button>
   );
 }

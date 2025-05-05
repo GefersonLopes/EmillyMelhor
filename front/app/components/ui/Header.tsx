@@ -9,25 +9,25 @@ export const Header = () => {
           alt="Capa"
           width={1920}
           height={1080}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full max-h-[280px] rotate-360"
           priority
         />
       </div>
 
-      <div className="absolute top-32 sm:top-36 md:top-40 left-1/2 -translate-x-1/2">
+      <div className="absolute top-40 left-1/2 -translate-x-1/2">
         <div className="w-[232px] h-[232px] rounded-full overflow-hidden">
           <Image
             src="/assets/profile.jpg"
             alt="Avatar"
             width={160}
             height={160}
-            className="object-cover w-full h-full"
+            className="object-cover object-[center_40%]  w-full h-full"
             priority
           />
         </div>
       </div>
 
-      <div className="pt-20 sm:pt-24 md:pt-28 text-center">
+      <div className="pt-20 pt-30 text-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase">
           Emilly Melhor
         </h1>
