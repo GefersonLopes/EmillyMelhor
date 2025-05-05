@@ -1,0 +1,2 @@
+npx husky add .husky/pre-commit "npm exec lint-staged"
+chmod +x .husky/pre-commit
