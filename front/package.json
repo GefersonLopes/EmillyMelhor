@@ -9,7 +9,7 @@
     "lint": "next lint --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky install ../.husky"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
