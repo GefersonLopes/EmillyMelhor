@@ -1,4 +1,5 @@
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { v4 as uuidv4 } from "uuid";
 
 import { useAllVehicles } from "../../../hooks/useAllVehicles";
 import MapPin from "../../ui/MapPin";
@@ -34,7 +35,7 @@ export default function MapSection() {
           >
             {data?.vehicles.map((v, i) => (
               <MapPin
-                key={v.id}
+                key={uuidv4()}
                 index={i}
                 item={v}
                 locations={data.locationVehicles}

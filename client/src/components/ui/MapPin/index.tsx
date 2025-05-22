@@ -2,6 +2,7 @@ import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { OverlayView } from "@react-google-maps/api";
 import clsx from "clsx";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { useMapStore } from "../../../store/mapStore";
 import type { LocationVehicle } from "../../../types/veicle";
@@ -33,7 +34,7 @@ const MapPin: React.FC<MapPinProps> = ({
 
   return (
     <OverlayView
-      key={item.id}
+      key={uuidv4()}
       position={{ lat, lng }}
       mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       getPixelPositionOffset={(w, h) => ({ x: -w / 2, y: -h })}

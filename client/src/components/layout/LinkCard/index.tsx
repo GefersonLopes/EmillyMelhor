@@ -13,9 +13,6 @@ export function LinkCard({
 }: LinkCardProps) {
   const navigate = useNavigate();
 
-  console.log(title);
-  console.log(target);
-
   return (
     <button
       onClick={() => (target === "_blank" ? window.open(href) : navigate(href))}

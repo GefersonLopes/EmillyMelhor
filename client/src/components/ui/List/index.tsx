@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { HTMLAttributes, ReactNode } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { containerAnimation, itemAnimation } from "./animation";
 
@@ -27,12 +27,7 @@ export function List<T>({
       >
         {items.map((item, idx) => (
           <motion.li
-            key={
-              (item as any).id ??
-              (item as any).name ??
-              (item as any).href ??
-              idx
-            }
+            key={uuidv4()}
             variants={itemAnimation}
             className="flex items-center justify-center"
           >

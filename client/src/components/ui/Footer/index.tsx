@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const Footer = ({
   logo,
@@ -38,14 +39,14 @@ const Footer = ({
         )}
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-6 md:mb-0 space-x-4">
-          {sections.map((section, idx) => (
-            <div key={idx}>
+          {sections.map((section) => (
+            <div key={uuidv4()}>
               {section.title && (
                 <h3 className="font-semibold mb-4">{section.title}</h3>
               )}
               <ul>
-                {section.links.map((link, i) => (
-                  <li key={i} className="mb-2">
+                {section.links.map((link) => (
+                  <li key={uuidv4()} className="mb-2">
                     <a href={link.href} className="hover:underline">
                       {link.label}
                     </a>
@@ -60,7 +61,7 @@ const Footer = ({
           <div className="flex space-x-1 items-center">
             {socialLinks.map((social, idx) => (
               <a
-                key={idx}
+                key={uuidv4()}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"

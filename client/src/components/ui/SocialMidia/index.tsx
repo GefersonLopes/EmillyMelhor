@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { v4 as uuidv4 } from "uuid";
 
 import { Link } from "../Link";
 
@@ -21,7 +22,7 @@ export default function SocialMidia({
     >
       {links?.map((link) => (
         <Link
-          key={link.href}
+          key={uuidv4()}
           href={link.href}
           target="_blank"
           aria-label={link.title}

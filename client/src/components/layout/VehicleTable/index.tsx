@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { v4 as uuidv4 } from "uuid";
 
 import { useInfiniteScroll } from "../../../hooks/useInfiniteScroll";
 import { useVehiclesInfinite } from "../../../hooks/useVehiclesInfinite";
@@ -52,7 +53,7 @@ export default function VehicleTable() {
         </TableHead>
         <TableBody>
           {vehicles.map((r) => (
-            <TableRow key={r.id}>
+            <TableRow key={uuidv4()}>
               <Td>{r.plate ?? "-"}</Td>
               <Td>{r.fleet ?? "-"}</Td>
               <Td>{tType(r.type)}</Td>
