@@ -59,7 +59,7 @@ const Footer = ({
 
         {socialLinks.length > 0 && (
           <div className="flex space-x-1 items-center">
-            {socialLinks.map((social, idx) => (
+            {socialLinks.map((social) => (
               <a
                 key={uuidv4()}
                 href={social.href}
